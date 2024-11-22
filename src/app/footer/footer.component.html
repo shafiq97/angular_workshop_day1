@@ -9,9 +9,20 @@
 <ng-template #elseBlock>
   <app-header></app-header>
 </ng-template> -->
-<ul>
+<!-- <ul>
   <li *ngFor="let item of items; let i = index">
     {{ i + 1 }}. {{ item }}
   </li>
-</ul>
+</ul> -->
+
+<p appHighlight defaultColor="red">
+  <!-- Todo debug highlight not working -->
+  Hover over me to see the highlight effect!
+</p>
+
+<p>{{ price | currency }}</p>
+<p>{{ price | currency: 'USD' }}</p>
+<p>{{ price | currency: 'RM':'symbol':'4.2-2' }}</p>
+
+
 

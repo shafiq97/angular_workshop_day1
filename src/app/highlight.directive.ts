@@ -9,10 +9,12 @@ export class HighlightDirective {
   constructor(private el: ElementRef) {}
 
   @HostListener('mouseenter') onMouseEnter() {
+    console.log('got here')
     this.highlight(this.defaultColor);
   }
 
   @HostListener('mouseleave') onMouseLeave() {
+    console.log('got here2')
     this.highlight('');
   }
 

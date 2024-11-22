@@ -14,4 +14,5 @@ export class FooterComponent {
   isSuccess: boolean = false; // Toggle this to see class changes
   isVisible: boolean = false;
   items: string[] = ['Angular', 'React', 'Vue'];
+  price: number = 12345.6789;
 }

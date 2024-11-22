@@ -1,0 +1,13 @@
+<h1>{{ title }}</h1> <!-- Interpolation -->
+<button [disabled]="buttonDisabled">{{ title }}</button> <!-- Property Binding -->
+<button disabled>html disabled</button>
+<button (click)="onButtonClick()">Click Me</button> <!-- Event Binding -->
+
+<div>
+  <label for="name">Enter your name:</label>
+  <input id="name" [(ngModel)]="userName" placeholder="Your name" /> <!-- Two-Way Binding -->
+  <p>Hello, {{ userName }}!</p>
+</div>
+
+
+

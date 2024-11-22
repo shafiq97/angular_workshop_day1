@@ -7,17 +7,19 @@ import { DataService } from "./services/data.service";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import { MealService } from "./services/meal.service";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatCardModule } from "@angular/material/card";
+import { MatButtonModule } from "@angular/material/button";
 
 @Component({
   selector: "app-root",
   standalone: true,
   imports: [
     FormsModule,
-    RouterOutlet,
-    HeaderComponent,
-    FooterComponent,
-    MyPageComponent,
     CommonModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatButtonModule,
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
@@ -44,7 +46,7 @@ export class AppComponent {
         this.meals = data.meals || []; // Handle empty or null responses
       },
       (error) => {
-        console.error('Error fetching meals:', error);
+        console.error("Error fetching meals:", error);
       }
     );
   }

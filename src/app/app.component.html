@@ -1,2 +1,40 @@
-<app-footer></app-footer>
-<router-outlet />
+<!-- <app-footer></app-footer>
+<router-outlet /> -->
+
+<!-- <div class="container">
+  <h1>User List</h1>
+  <ul>
+    <li *ngFor="let user of users">{{ user }}</li>
+  </ul>
+
+  <div>
+    <input
+      type="text"
+      [(ngModel)]="newUser"
+      placeholder="Enter user name"
+      class="form-control"
+    />
+    <button (click)="addUser()" class="btn btn-primary mt-2">Add User</button>
+  </div>
+</div> -->
+
+<div class="container">
+  <h1>Meals</h1>
+  <div *ngIf="meals.length > 0; else noMeals">
+    <div *ngFor="let meal of meals" class="card mb-3">
+      <img [src]="meal.strMealThumb" class="card-img-top" [alt]="meal.strMeal" />
+      <div class="card-body">
+        <h5 class="card-title">{{ meal.strMeal }}</h5>
+        <p class="card-text"><strong>Category:</strong> {{ meal.strCategory }}</p>
+        <p class="card-text"><strong>Area:</strong> {{ meal.strArea }}</p>
+        <p class="card-text">{{ meal.strInstructions | slice: 0:150 }}...</p>
+        <a [href]="meal.strYoutube" target="_blank" class="btn btn-primary">Watch on YouTube</a>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noMeals>
+    <p>No meals found.</p>
+  </ng-template>
+</div>
+

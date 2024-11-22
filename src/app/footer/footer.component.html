@@ -1,1 +1,17 @@
-<button class="btn btn-danger">Red bootstap button</button>
+<!-- <button [ngClass]="{'btn btn-success': isSuccess, 'btn btn-danger': !isSuccess }">
+  Conditional Class Example
+</button> -->
+
+
+<!-- <div *ngIf="isVisible; else elseBlock">
+  This is visible!
+</div>
+<ng-template #elseBlock>
+  <app-header></app-header>
+</ng-template> -->
+<ul>
+  <li *ngFor="let item of items; let i = index">
+    {{ i + 1 }}. {{ item }}
+  </li>
+</ul>
+

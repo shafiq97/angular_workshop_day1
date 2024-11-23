@@ -35,7 +35,7 @@ export class AddCarComponent {
 
   onSubmit() {
     if (this.carForm.valid) {
-      this.http.post('http://localhost:5001/cars', this.carForm.value).subscribe({
+      this.http.post('https://8ee0-115-164-33-144.ngrok-free.app/cars', this.carForm.value).subscribe({
         next: (response) => {
           console.log('Car added successfully:', response);
           alert('Car added successfully!');

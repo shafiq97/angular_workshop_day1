@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'header', loadComponent: () => import('./header/header.component').then(m => m.HeaderComponent) },
   { path: 'my-form', loadComponent: () => import('./my-form/my-form.component').then(m => m.MyFormComponent) },
   { path: 'template', loadComponent: () => import('./template-form/template-form.component').then(m => m.TemplateFormComponent) },
+  { path: 'add-car', loadComponent: () => import('./add-car/add-car.component').then(m => m.AddCarComponent) },
   { path: '**', redirectTo: 'home' }, // Wildcard for 404s
 ];
 

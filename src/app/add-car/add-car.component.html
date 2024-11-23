@@ -1,0 +1,44 @@
+<form [formGroup]="carForm" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Make</mat-label>
+    <input matInput formControlName="make" placeholder="Enter car make" />
+    <mat-error *ngIf="carForm.get('make')?.hasError('required')">Make is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Model</mat-label>
+    <input matInput formControlName="model" placeholder="Enter car model" />
+    <mat-error *ngIf="carForm.get('model')?.hasError('required')">Model is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Year</mat-label>
+    <input matInput formControlName="year" placeholder="Enter car year" type="number" />
+    <mat-error *ngIf="carForm.get('year')?.hasError('required')">Year is required</mat-error>
+    <mat-error *ngIf="carForm.get('year')?.hasError('pattern')">Year must be a valid 4-digit number</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price" placeholder="Enter car price" type="number" />
+    <mat-error *ngIf="carForm.get('price')?.hasError('required')">Price is required</mat-error>
+    <mat-error *ngIf="carForm.get('price')?.hasError('min')">Price must be greater than or equal to 0</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Mileage</mat-label>
+    <input matInput formControlName="mileage" placeholder="Enter car mileage" type="number" />
+    <mat-error *ngIf="carForm.get('mileage')?.hasError('required')">Mileage is required</mat-error>
+    <mat-error *ngIf="carForm.get('mileage')?.hasError('min')">Mileage must be greater than or equal to 0</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Color</mat-label>
+    <input matInput formControlName="color" placeholder="Enter car color" />
+    <mat-error *ngIf="carForm.get('color')?.hasError('required')">Color is required</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit" [disabled]="carForm.invalid">
+    Add Car
+  </button>
+</form>

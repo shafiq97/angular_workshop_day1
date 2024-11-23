@@ -16,6 +16,7 @@ export class MyPageComponent {
   constructor(private readonly router: Router) {}
 
   navigateToFooter() {
+    //another process or logics
     this.router.navigate(['/footer']);
   }
 }

@@ -15,6 +15,7 @@
         <input matInput type="email" formControlName="email" placeholder="Enter your email" />
         <mat-error *ngIf="formStep1.get('email')?.hasError('required')">Email is required</mat-error>
         <mat-error *ngIf="formStep1.get('email')?.hasError('email')">Invalid email address</mat-error>
+        <mat-error *ngIf="formStep1.get('email')?.hasError('invalidDomain')">Domain must use uitm.com.my</mat-error>
       </mat-form-field>
 
       <button mat-button matStepperNext [disabled]="formStep1.invalid">Next</button>
@@ -32,6 +33,23 @@
         <mat-datepicker #picker></mat-datepicker>
         <mat-error *ngIf="formStep2.get('birthDate')?.hasError('required')">Birth Date is required</mat-error>
       </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Searchable Dropdown</mat-label>
+        <input matInput (input)="filterDropdown($event)" placeholder="Search options" />
+        <mat-select formControlName="dropdown">
+          <mat-option *ngFor="let option of filteredOptions" [value]="option">{{ option }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="file-upload">
+        <label for="fileInput">
+          <input id="fileInput" type="file" (click)="onFileSelect($event)" hidden />
+          <button mat-raised-button color="primary" type="button">Upload File</button>
+        </label>
+      </div>
+      <p *ngIf="fileName">Selected File: {{ fileName }}</p>
+
 
       <button mat-button matStepperPrevious>Back</button>
       <button mat-button matStepperNext [disabled]="formStep2.invalid">Next</button>

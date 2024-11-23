@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
+import { RouterOutlet, RouterModule } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { MyPageComponent } from "./my-page/my-page.component";
@@ -10,7 +10,6 @@ import { MealService } from "./services/meal.service";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
-import { RouterModule } from '@angular/router';
 
 
 @Component({
@@ -22,7 +21,7 @@ import { RouterModule } from '@angular/router';
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",

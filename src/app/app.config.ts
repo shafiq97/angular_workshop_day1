@@ -4,6 +4,7 @@ import { provideHttpClient } from "@angular/common/http";
 
 import { MatButtonModule } from "@angular/material/button";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatFormFieldControl } from "@angular/material/form-field";
 import { MatCardModule } from "@angular/material/card";
 import { provideAnimations } from '@angular/platform-browser/animations'; // Import animations
 
@@ -28,6 +29,5 @@ export const appConfig: ApplicationConfig = {
     MatToolbarModule,
     MatCardModule,
     provideAnimations(),
-
   ],
 };

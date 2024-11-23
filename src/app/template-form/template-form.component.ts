@@ -5,6 +5,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-template-form',
@@ -16,6 +17,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatButtonModule,
     MatSelectModule,
     MatRadioModule,
+    CommonModule
   ],
   templateUrl: './template-form.component.html',
   styleUrls: ['./template-form.component.css'],

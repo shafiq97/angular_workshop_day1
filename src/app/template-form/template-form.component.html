@@ -1,0 +1,61 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <!-- Name Input -->
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input
+      matInput
+      name="name"
+      [(ngModel)]="formData.name"
+      required
+      placeholder="Enter your name"
+    />
+    <mat-error *ngIf="form.controls['name']?.invalid">Name is required</mat-error>
+  </mat-form-field>
+
+  <!-- Email Input -->
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input
+      matInput
+      name="email"
+      [(ngModel)]="formData.email"
+      type="email"
+      required
+      placeholder="Enter your email"
+    />
+    <mat-error *ngIf="form.controls['email']?.invalid">Valid email is required</mat-error>
+  </mat-form-field>
+
+  <!-- Gender Radio Buttons -->
+  <div>
+    <label>Gender</label>
+    <mat-radio-group [(ngModel)]="formData.gender" name="gender" required>
+      <mat-radio-button value="male">Male</mat-radio-button>
+      <mat-radio-button value="female">Female</mat-radio-button>
+    </mat-radio-group>
+  </div>
+
+  <!-- Country Dropdown -->
+  <mat-form-field appearance="fill">
+    <mat-label>Country</mat-label>
+    <mat-select [(ngModel)]="formData.country" name="country" required>
+      <mat-option *ngFor="let country of countries" [value]="country">
+        {{ country }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.controls['country']?.invalid">Country is required</mat-error>
+  </mat-form-field>
+
+  <!-- Terms and Conditions Checkbox -->
+  <div>
+    <mat-checkbox [(ngModel)]="formData.terms" name="terms" required>
+      I agree to the terms and conditions
+    </mat-checkbox>
+    <mat-error *ngIf="form.controls['terms']?.invalid">You must agree to the terms</mat-error>
+  </div>
+
+  <!-- Submit Button -->
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+    Submit
+  </button>
+</form>

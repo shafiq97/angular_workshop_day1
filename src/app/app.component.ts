@@ -10,6 +10,8 @@ import { MealService } from "./services/meal.service";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatCardModule } from "@angular/material/card";
 import { MatButtonModule } from "@angular/material/button";
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: "app-root",
@@ -20,6 +22,7 @@ import { MatButtonModule } from "@angular/material/button";
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    RouterModule
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",

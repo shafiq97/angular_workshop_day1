@@ -1,0 +1,15 @@
+nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+a.active {
+  font-weight: bold;
+  color: #ff6600;
+}

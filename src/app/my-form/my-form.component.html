@@ -1,0 +1,48 @@
+<mat-horizontal-stepper [linear]="true">
+  <mat-step [stepControl]="formStep1">
+    <form [formGroup]="formStep1">
+      <h3>Step 1: Personal Information</h3>
+      <!-- Step Content -->
+      <mat-form-field appearance="fill">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" placeholder="Enter your name" />
+        <mat-error *ngIf="formStep1.get('name')?.hasError('required')">Name is required</mat-error>
+        <mat-error *ngIf="formStep1.get('name')?.hasError('minlength')">Minimum 3 characters required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email" placeholder="Enter your email" />
+        <mat-error *ngIf="formStep1.get('email')?.hasError('required')">Email is required</mat-error>
+        <mat-error *ngIf="formStep1.get('email')?.hasError('email')">Invalid email address</mat-error>
+      </mat-form-field>
+
+      <button mat-button matStepperNext [disabled]="formStep1.invalid">Next</button>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="formStep2">
+    <form [formGroup]="formStep2">
+      <h3>Step 2: Event Details</h3>
+      <!-- Step Content -->
+      <mat-form-field appearance="fill">
+        <mat-label>Birth Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthDate" />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="formStep2.get('birthDate')?.hasError('required')">Birth Date is required</mat-error>
+      </mat-form-field>
+
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button matStepperNext [disabled]="formStep2.invalid">Next</button>
+    </form>
+  </mat-step>
+
+  <mat-step>
+    <h3>Step 3: Review and Submit</h3>
+    <p>Review your information before submission.</p>
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button color="primary" (click)="onSubmit()">Submit</button>
+  </mat-step>
+</mat-horizontal-stepper>
+
